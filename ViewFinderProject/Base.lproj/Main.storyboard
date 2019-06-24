@@ -48,7 +48,7 @@
         <!--Add New Photo-->
         <scene sceneID="un8-QW-zm1">
             <objects>
-                <viewController id="CBK-Zl-D9d" sceneMemberID="viewController">
+                <viewController id="CBK-Zl-D9d" customClass="AddPhotoViewController" customModule="ViewFinderProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5B9-UO-KQQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,12 +58,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraTapped:" destination="CBK-Zl-D9d" eventType="touchUpInside" id="u4o-A5-w6U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="el9-GT-tba">
-                                <rect key="frame" x="279" y="499" width="79" height="41"/>
+                                <rect key="frame" x="285" y="499" width="68" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Albums"/>
+                                <state key="normal" title="Album"/>
+                                <connections>
+                                    <action selector="albumsTapped:" destination="CBK-Zl-D9d" eventType="touchUpInside" id="j6N-L4-nCS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQb-9U-Jdy">
                                 <rect key="frame" x="130" y="432" width="160" height="41"/>
@@ -89,6 +95,9 @@
                     <navigationItem key="navigationItem" title="Add New Photo" id="su9-ef-T2n">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Es9-8I-hJl"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="SaT-30-Ll7" id="xt4-Zs-qQ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78f-qV-upE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

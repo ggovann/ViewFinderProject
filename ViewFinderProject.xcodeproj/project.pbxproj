@@ -14,6 +14,7 @@
 		18D869CA22C14023005FF354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D869C822C14023005FF354 /* LaunchScreen.storyboard */; };
 		18D869D522C14023005FF354 /* ViewFinderProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D869D422C14023005FF354 /* ViewFinderProjectTests.swift */; };
 		18D869E022C14023005FF354 /* ViewFinderProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D869DF22C14023005FF354 /* ViewFinderProjectUITests.swift */; };
+		18D869EE22C14C17005FF354 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D869ED22C14C17005FF354 /* AddPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		18D869DB22C14023005FF354 /* ViewFinderProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewFinderProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D869DF22C14023005FF354 /* ViewFinderProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFinderProjectUITests.swift; sourceTree = "<group>"; };
 		18D869E122C14023005FF354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D869ED22C14C17005FF354 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				18D869C822C14023005FF354 /* LaunchScreen.storyboard */,
 				18D869CB22C14023005FF354 /* Info.plist */,
 				18D869C322C14021005FF354 /* ViewFinderProject.xcdatamodeld */,
+				18D869ED22C14C17005FF354 /* AddPhotoViewController.swift */,
 			);
 			path = ViewFinderProject;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D869C522C14021005FF354 /* ViewFinderProject.xcdatamodeld in Sources */,
+				18D869EE22C14C17005FF354 /* AddPhotoViewController.swift in Sources */,
 				18D869BD22C14021005FF354 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
