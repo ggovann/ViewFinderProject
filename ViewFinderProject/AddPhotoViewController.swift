@@ -10,10 +10,11 @@ import UIKit
 
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var imagePicker = UIImagePickerController()
+    
     @IBOutlet weak var imageView: UIImageView!
     
-    
-var imagePicker = UIImagePickerController()
+    @IBOutlet weak var captionText: UITextField!
     
     
     override func viewDidLoad() {
@@ -33,20 +34,39 @@ var imagePicker = UIImagePickerController()
         present(imagePicker, animated: true, completion: nil)
     }
     
-    
+    @IBAction func savePhotoTapped(_ sender: UIButton) {
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            let photoToSave = Photos(entity: Photos.entity(), insertInto: context)
+            
+            photoToSave.caption = captionText.text
+           
+            if let userImage = imageView.image {
+                if let userImageData = userImage.pngData(){
+                    photoToSave.imageData = userImageData
+                }
+            
+            }
+            
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            
+    navigationController?.popViewController(animated: true)
+        
+        }
+    }
+     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            imageView.image = selectedImage
+            if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+                imageView.image = selectedImage
+        
+                imagePicker.dismiss(animated: true, completion: nil)
         }
         
-        imagePicker.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
+
+}
     /*
     // MARK: - Navigation
 
@@ -57,4 +77,6 @@ var imagePicker = UIImagePickerController()
     }
     */
 
-}
+
+
+

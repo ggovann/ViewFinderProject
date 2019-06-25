@@ -13,7 +13,7 @@
         <!--ViewFinder-->
         <scene sceneID="seu-rD-0g2">
             <objects>
-                <tableViewController id="41o-ax-HOh" sceneMemberID="viewController">
+                <tableViewController id="41o-ax-HOh" customClass="PhotoTableViewController" customModule="ViewFinderProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3kV-m3-aQr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Save this photo"/>
+                                <connections>
+                                    <action selector="savePhotoTapped:" destination="CBK-Zl-D9d" eventType="touchUpInside" id="4Qb-1K-dwx"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fL8-XL-5bw">
                                 <rect key="frame" x="88" y="364" width="240" height="30"/>
@@ -83,6 +86,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="savePhotoTapped:" destination="CBK-Zl-D9d" eventType="editingDidEnd" id="6OH-3J-io1"/>
+                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="SaT-30-Ll7">
                                 <rect key="frame" x="90" y="127" width="240" height="207"/>
@@ -96,7 +102,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Es9-8I-hJl"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="SaT-30-Ll7" id="xt4-Zs-qQ4"/>
+                        <outlet property="captionText" destination="fL8-XL-5bw" id="hDN-yZ-aWu"/>
+                        <outlet property="imageView" destination="SaT-30-Ll7" id="Bmg-HF-UM0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78f-qV-upE" userLabel="First Responder" sceneMemberID="firstResponder"/>
